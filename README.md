@@ -11,6 +11,9 @@ https://github.com/Shougo/neobundle.vim
 ## fish
 https://fishshell.com/
 
+## tmux
+https://github.com/tmux/tmux
+
 # install
 ```shell
 cd $HOME
