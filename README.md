@@ -8,6 +8,9 @@ https://github.com/ggreer/the_silver_searcher
 ## NeoBundle
 https://github.com/Shougo/neobundle.vim
 
+## fish
+https://fishshell.com/
+
 # install
 ```shell
 cd $HOME
