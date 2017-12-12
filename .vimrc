@@ -22,8 +22,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " ファイルオープンを便利に
 NeoBundle 'kien/ctrlp.vim'
-" Unite.vimで最近使ったファイルを表示できるようにする
-NeoBundle 'Shougo/neomru.vim'
 " ファイルをtree表示してくれる
 NeoBundle 'scrooloose/nerdtree'
 " NERDTree上でgitステータスを表示
@@ -45,15 +43,11 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " ログファイルを色づけしてくれる
 NeoBundle 'vim-scripts/AnsiEsc.vim'
-" 行末の半角スペースを可視化(うまく動かない？)
+" 行末の半角スペースを可視化
 NeoBundle 'bronson/vim-trailing-whitespace'
-" less用のsyntaxハイライト
-NeoBundle 'KohPoll/vim-less'
 " FZF
 NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 NeoBundle 'junegunn/fzf.vim'
-
-" 余談: neocompleteは合わなかった。ctrl+pで補完するのが便利
 
 call neobundle#end()
 
