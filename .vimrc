@@ -1,5 +1,3 @@
-" 挙動を vi 互換ではなく、Vim のデフォルト設定にする
-set nocompatible
 " 一旦ファイルタイプ関連を無効化する
 filetype off
 
@@ -7,8 +5,6 @@ filetype off
 " プラグインのセットアップ
 """"""""""""""""""""""""""""""
 if has('vim_starting')
-  set nocompatible               " Be iMproved
-
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
