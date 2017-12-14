@@ -1,59 +1,48 @@
-" 一旦ファイルタイプ関連を無効化する
-filetype off
-
 """"""""""""""""""""""""""""""
 " プラグインのセットアップ
 """"""""""""""""""""""""""""""
-if has('vim_starting')
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+" 自動インストール
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " ファイルオープンを便利に
-NeoBundle 'kien/ctrlp.vim'
-" ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
-" NERDTree上でgitステータスを表示
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+Plug 'kien/ctrlp.vim'
+" ファイルをtree表示してくれる | NERDTree上でgitステータスを表示
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
 " Gitを便利に使う
-NeoBundle 'tpope/vim-fugitive'
-
+Plug 'tpope/vim-fugitive', { 'for': 'ruby' }
 " Rails向けのコマンドを提供する
-NeoBundle 'tpope/vim-rails'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 " Ruby向けにendを自動挿入してくれる
-NeoBundle 'tpope/vim-endwise'
-
+Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 " コメントON/OFFを手軽に実行
-NeoBundle 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 " シングルクオートとダブルクオートの入れ替え等
-NeoBundle 'tpope/vim-surround'
-
+Plug 'tpope/vim-surround'
 " インデントに色を付けて見やすくする
-NeoBundle 'nathanaelkane/vim-indent-guides'
+Plug 'nathanaelkane/vim-indent-guides'
 " ログファイルを色づけしてくれる
-NeoBundle 'vim-scripts/AnsiEsc.vim'
+Plug 'vim-scripts/AnsiEsc.vim'
 " 行末の半角スペースを可視化
-NeoBundle 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 " FZF
-NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-NeoBundle 'junegunn/fzf.vim'
+" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run install script
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  " Both options are optional. You don't have to install fzf in ~/.fzf
+  " and you don't have to run install script if you use fzf only in Vim.
 
-call neobundle#end()
+call plug#end()
 
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 """"""""""""""""""""""""""""""
+
+" 一旦ファイルタイプ関連を無効化する
+filetype off
 
 """"""""""""""""""""""""""""""
 " 各種オプションの設定

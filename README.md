@@ -1,12 +1,9 @@
 # requirements
-## fzf
-https://github.com/junegunn/fzf
-
 ## ag(the silver searcher)
 https://github.com/ggreer/the_silver_searcher
 
-## NeoBundle
-https://github.com/Shougo/neobundle.vim
+## vim-plug
+https://github.com/junegunn/vim-plug
 
 ## fish
 https://fishshell.com/
