@@ -16,7 +16,7 @@ Plug 'kien/ctrlp.vim'
 " ファイルをtree表示してくれる | NERDTree上でgitステータスを表示
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
 " Gitを便利に使う
-Plug 'tpope/vim-fugitive', { 'for': 'ruby' }
+Plug 'tpope/vim-fugitive'
 " Rails向けのコマンドを提供する
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 " Ruby向けにendを自動挿入してくれる
@@ -36,6 +36,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   " Both options are optional. You don't have to install fzf in ~/.fzf
   " and you don't have to run install script if you use fzf only in Vim.
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
