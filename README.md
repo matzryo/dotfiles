@@ -2,17 +2,21 @@
 
 ## requirements
 
-### ag(the silver searcher)
-
-<https://github.com/ggreer/the_silver_searcher>
-
-### vim-plug
-
-<https://github.com/junegunn/vim-plug>
-
 ### tmux
 
 <https://github.com/tmux/tmux>
+
+### vim
+
+<http://www.vim.org/>
+
+#### vim-plug
+
+<https://github.com/junegunn/vim-plug>
+
+##### ag(the silver searcher)
+
+<https://github.com/ggreer/the_silver_searcher>
 
 ### macOS
 
