@@ -5,9 +5,6 @@ https://github.com/ggreer/the_silver_searcher
 ## vim-plug
 https://github.com/junegunn/vim-plug
 
-## fish
-https://fishshell.com/
-
 ## tmux
 https://github.com/tmux/tmux
 
