@@ -10,9 +10,11 @@
 
 <http://www.vim.org/>
 
-#### ag(the silver searcher)
+#### The Silver Searcher
 
 <https://github.com/ggreer/the_silver_searcher>
+
+fzf.vimのAgコマンドで必要
 
 ### macOS
 
