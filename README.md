@@ -10,11 +10,7 @@
 
 <http://www.vim.org/>
 
-#### vim-plug
-
-<https://github.com/junegunn/vim-plug>
-
-##### ag(the silver searcher)
+#### ag(the silver searcher)
 
 <https://github.com/ggreer/the_silver_searcher>
 
