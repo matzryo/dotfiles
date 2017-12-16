@@ -1,22 +1,33 @@
-# requirements
-## ag(the silver searcher)
-https://github.com/ggreer/the_silver_searcher
+# dotfiles
 
-## vim-plug
-https://github.com/junegunn/vim-plug
+## requirements
 
-## tmux
-https://github.com/tmux/tmux
+### ag(the silver searcher)
 
-## macOS
-### reattach-to-user-namespace
-https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
+<https://github.com/ggreer/the_silver_searcher>
 
-## Linux
-### xsel
-http://www.kfish.org/software/xsel/
+### vim-plug
 
-# install
+<https://github.com/junegunn/vim-plug>
+
+### tmux
+
+<https://github.com/tmux/tmux>
+
+### macOS
+
+#### reattach-to-user-namespace
+
+<https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard>
+
+### Linux
+
+#### xsel
+
+<http://www.kfish.org/software/xsel/>
+
+## install
+
 ```shell
 cd $HOME
 git clone git@github.com:matzryo/dotfiles.git
