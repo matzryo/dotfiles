@@ -66,7 +66,7 @@ set laststatus=2
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 " fugitiveがインストールされていれば、ステータス行に現在のgitブランチを表示する
 " チェックしないとfugitive#statusline()関数がないとのエラーが出てしまう
-if isdirectory(expand('~/.vim/bundle/vim-fugitive'))
+if isdirectory(expand('~/.vim/plugged/vim-fugitive'))
   set statusline+=%{fugitive#statusline()}
 endif
 " ウインドウのタイトルバーにファイルのパス情報等を表示する
