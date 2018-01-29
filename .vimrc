@@ -37,6 +37,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   " Both options are optional. You don't have to install fzf in ~/.fzf
   " and you don't have to run install script if you use fzf only in Vim.
 Plug 'junegunn/fzf.vim'
+" color scheme
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -119,7 +121,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 " 構文毎に文字色を変化させる
 syntax on
 " カラースキーマの指定
-colorscheme desert
+colorscheme gruvbox
 " 行番号の色
 highlight LineNr ctermfg=darkyellow
 """"""""""""""""""""""""""""""
