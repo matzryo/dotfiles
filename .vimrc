@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""
 " プラグインのセットアップ
 """"""""""""""""""""""""""""""
-" 自動インストール
+" vim-plugがなければ自動でインストールする
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -40,6 +40,13 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+" 未インストールのプラグインがあれば、自動でインストールする
+" Automatically install missing plugins on startup
+" https://github.com/junegunn/vim-plug/wiki/extra#automatically-install-missing-plugins-on-startup
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
 """"""""""""""""""""""""""""""
 
 " 一旦ファイルタイプ関連を無効化する
