@@ -121,7 +121,10 @@ set whichwrap=b,s,h,l,<,>,[,]
 " 構文毎に文字色を変化させる
 syntax on
 " カラースキーマの指定
-colorscheme gruvbox
+" gruvboxをインストール済みならgruvbox,未インストールならdesertを適用
+colorscheme desert
+silent! colorscheme gruvbox
+
 " 行番号の色
 highlight LineNr ctermfg=darkyellow
 """"""""""""""""""""""""""""""
