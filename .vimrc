@@ -39,6 +39,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " color scheme
 Plug 'morhetz/gruvbox'
+" シンタックスチェック
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
@@ -176,6 +178,24 @@ noremap <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
 
+""""""""""""""""""""""""""""""
+
+" 参考: https://github.com/vim-syntastic/syntastic#3-recommended-settings
+" 参考: https://qiita.com/yuku_t/items/0ac33cea18e10f14e185
+""""""""""""""""""""""""""""""
+" syntastic設定
+""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" デフォルトではチェックしない、rubyファイルはチェックする
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
 """"""""""""""""""""""""""""""
 
 " matchitを読み込み。doとendを対応付けられる
