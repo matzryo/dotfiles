@@ -186,7 +186,11 @@ let NERDTreeShowHidden=1
 " syntastic設定
 """"""""""""""""""""""""""""""
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" syntasticがインストールされていれば、ステータス行に現在のgitブランチを表示する
+" チェックしないとSyntasticStatuslineFlag()がないとのエラーが出てしまう
+if isdirectory(expand('~/.vim/plugged/syntastic'))
+  set statusline+=%{SyntasticStatuslineFlag()}
+endif
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
