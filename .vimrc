@@ -1,3 +1,4 @@
+scriptencoding utf-8
 """"""""""""""""""""""""""""""
 " プラグインのセットアップ
 """"""""""""""""""""""""""""""
@@ -6,7 +7,10 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  augroup InstallVimPlug
+    autocmd!
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  augroup END
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -47,10 +51,13 @@ call plug#end()
 " 未インストールのプラグインがあれば、自動でインストールする
 " Automatically install missing plugins on startup
 " https://github.com/junegunn/vim-plug/wiki/extra#automatically-install-missing-plugins-on-startup
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
+augroup SyncPlugins
+  autocmd!
+  autocmd VimEnter *
+    \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    \|   PlugInstall --sync | q
+    \| endif
+augroup END
 """"""""""""""""""""""""""""""
 
 " 一旦ファイルタイプ関連を無効化する
@@ -138,7 +145,10 @@ inoremap <silent> jj <ESC>
 let g:indent_guides_enable_on_vim_startup = 1
 
 " grep検索の実行後にQuickFix Listを表示する
-autocmd QuickFixCmdPost *grep* cwindow
+augroup ShowList
+  autocmd!
+  autocmd QuickFixCmdPost *grep* cwindow
+augroup END
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
 """"""""""""""""""""""""""""""
@@ -161,11 +171,14 @@ endif
 """"""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
 """"""""""""""""""""""""""""""
-if has("autocmd")
-    autocmd BufReadPost *
-    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \   exe "normal! g'\"" |
-    \ endif
+if has('autocmd')
+    augroup RestoreCursorPosition
+      autocmd!
+      autocmd BufReadPost *
+      \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+      \   exe "normal! g'\"" |
+      \ endif
+    augroup END
 endif
 """"""""""""""""""""""""""""""
 
