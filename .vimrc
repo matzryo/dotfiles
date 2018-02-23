@@ -198,8 +198,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " デフォルトではチェックしない、rubyファイルはチェックする
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_mode_map = {
+  \ 'mode': 'passive',
+  \ 'active_filetypes': ['ruby', 'vim'] }
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_vim_checkers = ['vint']
 """"""""""""""""""""""""""""""
 
 " matchitを読み込み。doとendを対応付けられる
