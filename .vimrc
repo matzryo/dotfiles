@@ -128,7 +128,7 @@ set smarttab
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 " 構文毎に文字色を変化させる
-syntax on
+syntax enable
 " カラースキーマの指定
 " gruvboxをインストール済みならgruvbox,未インストールならdesertを適用
 colorscheme desert
