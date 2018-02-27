@@ -130,28 +130,7 @@ set shiftwidth=2
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
-" 構文毎に文字色を変化させる
-syntax enable
-" カラースキーマの指定
-" gruvboxをインストール済みならgruvbox,未インストールならdesertを適用
-colorscheme desert
-silent! colorscheme gruvbox
-
-" 行番号の色
-highlight LineNr ctermfg=darkyellow
 """"""""""""""""""""""""""""""
-
-" jキーを２回連続で入力するとインサートモードからエスケープできるようバインド
-inoremap <silent> jj <ESC>
-
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup = 1
-
-" grep検索の実行後にQuickFix Listを表示する
-augroup ShowList
-  autocmd!
-  autocmd QuickFixCmdPost *grep* cwindow
-augroup END
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
 """"""""""""""""""""""""""""""
@@ -193,7 +172,6 @@ noremap <C-n> :NERDTreeToggle<CR>
 " ツリービュー以外にウインドウがなければvimを終了する
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
-
 """"""""""""""""""""""""""""""
 
 " 参考: https://github.com/vim-syntastic/syntastic#3-recommended-settings
@@ -221,8 +199,35 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_vim_checkers = ['vint']
 """"""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""
+" その他設定
+""""""""""""""""""""""""""""""
+" 構文毎に文字色を変化させる
+syntax enable
+
+" カラースキーマの指定
+" gruvboxをインストール済みならgruvbox,未インストールならdesertを適用
+colorscheme desert
+silent! colorscheme gruvbox
+
+" jキーを２回連続で入力するとインサートモードからエスケープできるようバインド
+inoremap <silent> jj <ESC>
+
+" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup = 1
+
+" grep検索の実行後にQuickFix Listを表示する
+augroup ShowList
+  autocmd!
+  autocmd QuickFixCmdPost *grep* cwindow
+augroup END
+
+" 行番号の色
+highlight LineNr ctermfg=darkyellow
+
 " matchitを読み込み。doとendを対応付けられる
 source $VIMRUNTIME/macros/matchit.vim
+""""""""""""""""""""""""""""""
 
 " filetype関連を有効にする
 filetype plugin indent on
