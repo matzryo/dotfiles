@@ -1,4 +1,10 @@
 scriptencoding utf-8
+
+" 一旦ファイルタイプ関連を無効化する
+" http://d.hatena.ne.jp/wiredool/20120618/1340019962
+filetype off
+filetype plugin indent off
+
 """"""""""""""""""""""""""""""
 " プラグインのセットアップ
 """"""""""""""""""""""""""""""
@@ -59,9 +65,6 @@ augroup SyncPlugins
     \| endif
 augroup END
 """"""""""""""""""""""""""""""
-
-" 一旦ファイルタイプ関連を無効化する
-filetype off
 
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
@@ -221,5 +224,5 @@ let g:syntastic_vim_checkers = ['vint']
 " matchitを読み込み。doとendを対応付けられる
 source $VIMRUNTIME/macros/matchit.vim
 
-" filetypeの自動検出(最後の方に書いた方がいいらしい)
-filetype on
+" filetype関連を有効にする
+filetype plugin indent on
