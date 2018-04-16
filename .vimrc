@@ -94,7 +94,7 @@ set laststatus=2
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 " fugitiveがインストールされていれば、ステータス行に現在のgitブランチを表示する
 " チェックしないとfugitive#statusline()関数がないとのエラーが出てしまう
-if isdirectory(expand('~/.vim/plugged/vim-fugitive'))
+if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
 " ウインドウのタイトルバーにファイルのパス情報等を表示する
@@ -337,8 +337,8 @@ augroup END
 " 行番号の色
 highlight LineNr ctermfg=darkyellow
 
-" matchitを読み込み。doとendを対応付けられる
-source $VIMRUNTIME/macros/matchit.vim
+" 対応する要素へ'%'で移動
+packadd! matchit
 """"""""""""""""""""""""""""""
 
 " filetype関連を有効にする
