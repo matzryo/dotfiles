@@ -25,8 +25,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
 " ファイルをtree表示してくれる | NERDTree上でgitステータスを表示
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
-" Gitを便利に使う
-Plug 'tpope/vim-fugitive'
 " Rails向けのコマンドを提供する
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 " Ruby向けにendを自動挿入してくれる
@@ -56,6 +54,10 @@ Plug 'Shougo/neocomplete.vim'
 " スニペット
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+" Gitを便利に使う
+Plug 'tpope/vim-fugitive'
+" ファイルの変更状況を表示
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -135,6 +137,10 @@ set shiftwidth=2
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
+" vim-gitgutterでの記号の更新を早める
+" 以下の時間(ミリ秒)の間入力がなければ更新。デフォルト4000
+" https://github.com/airblade/vim-gitgutter#when-signs-take-a-few-seconds-to-appear
+set updatetime=100
 """"""""""""""""""""""""""""""
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
