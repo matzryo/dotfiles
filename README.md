@@ -6,9 +6,11 @@
 
 <https://github.com/tmux/tmux>
 
-### vim
+### vim 8
 
 <http://www.vim.org/>
+
+[ale](https://github.com/w0rp/ale)を使うため、バージョン8以上が必要
 
 #### The Silver Searcher
 
