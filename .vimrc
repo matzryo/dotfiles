@@ -58,6 +58,9 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'tpope/vim-fugitive'
 " ファイルの変更状況を表示
 Plug 'airblade/vim-gitgutter'
+" ステータスラインを格好よくする
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -84,19 +87,6 @@ set directory=~/.vim/.swp//
 set undodir=~/.vim/.undo//
 " バックアップファイルの保存先
 set backupdir=$HOME/.vim/.backup//
-" カーソルが何行目の何列目に置かれているかを表示する
-set ruler
-" コマンドラインに使われる画面上の行数
-set cmdheight=2
-" エディタウィンドウの末尾から2行目にステータスラインを常時表示させる
-set laststatus=2
-" ステータス行に表示させる情報の指定(どこからかコピペしたので細かい意味はわかっていない)
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-" fugitiveがインストールされていれば、ステータス行に現在のgitブランチを表示する
-" チェックしないとfugitive#statusline()関数がないとのエラーが出てしまう
-if exists("*fugitive#statusline")
-  set statusline+=%{fugitive#statusline()}
-endif
 " ウインドウのタイトルバーにファイルのパス情報等を表示する
 set title
 " コマンドラインモードで<Tab>キーによるファイル名補完を有効にする
@@ -322,6 +312,9 @@ highlight LineNr ctermfg=darkyellow
 
 " 対応する要素へ'%'で移動
 packadd! matchit
+
+" ステータスバーのカラースキーマ
+let g:airline_theme='powerlineish'
 """"""""""""""""""""""""""""""
 
 " filetype関連を有効にする
