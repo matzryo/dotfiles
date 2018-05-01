@@ -319,6 +319,10 @@ packadd! matchit
 
 " ステータスバーのカラースキーマ
 let g:airline_theme='powerlineish'
+
+" 検索結果ハイライトをESCキーの連打でリセットする
+" vimテクニックバイブル4-16
+nnoremap <ESC><ESC> :nohlsearch<CR>
 """"""""""""""""""""""""""""""
 
 " filetype関連を有効にする
