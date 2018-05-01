@@ -61,6 +61,8 @@ Plug 'airblade/vim-gitgutter'
 " ステータスラインを格好よくする
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" 日本語ヘルプ
+Plug 'vim-jp/vimdoc-ja'
 
 call plug#end()
 
@@ -131,6 +133,8 @@ set whichwrap=b,s,h,l,<,>,[,]
 " 以下の時間(ミリ秒)の間入力がなければ更新。デフォルト4000
 " https://github.com/airblade/vim-gitgutter#when-signs-take-a-few-seconds-to-appear
 set updatetime=100
+" ヘルプ探索の優先順位を明示
+set helplang=ja,en
 """"""""""""""""""""""""""""""
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
