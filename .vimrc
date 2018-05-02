@@ -140,10 +140,10 @@ set updatetime=100
 set helplang=ja,en
 """"""""""""""""""""""""""""""
 
-" http://inari.hatenablog.com/entry/2014/05/05/231307
 """"""""""""""""""""""""""""""
 " 全角スペースの表示
 """"""""""""""""""""""""""""""
+" http://inari.hatenablog.com/entry/2014/05/05/231307
 function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 endfunction
@@ -172,10 +172,10 @@ if has('autocmd')
 endif
 """"""""""""""""""""""""""""""
 
-" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
 """"""""""""""""""""""""""""""
 " NERDTreeToggle設定
 """"""""""""""""""""""""""""""
+" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
 noremap <C-n> :NERDTreeToggle<CR>
 " ツリービュー以外にウインドウがなければvimを終了する
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
