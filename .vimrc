@@ -47,6 +47,13 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   " Both options are optional. You don't have to install fzf in ~/.fzf
   " and you don't have to run install script if you use fzf only in Vim.
 Plug 'junegunn/fzf.vim'
+
+" emmet
+Plug 'mattn/emmet-vim'
+" https://github.com/mattn/emmet-vim#enable-just-for-htmlcss
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 " color scheme
 Plug 'morhetz/gruvbox'
 " シンタックスチェック
