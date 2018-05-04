@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES=(.vimrc .tmux.conf)
+DOTFILES=(.bashrc .bash_profile .vimrc .tmux.conf)
 
 for file in ${DOTFILES[@]}
 do
