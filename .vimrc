@@ -23,20 +23,46 @@ call plug#begin('~/.vim/plugged')
 
 " ファイルオープンを便利に
 Plug 'kien/ctrlp.vim'
+
 " ファイルをtree表示してくれる | NERDTree上でgitステータスを表示
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
+""""""""""""""""""""""""""""""
+" nerdtree設定
+""""""""""""""""""""""""""""""
+" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
+noremap <C-n> :NERDTreeToggle<CR>
+" ツリービュー以外にウインドウがなければvimを終了する
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowHidden=1
+""""""""""""""""""""""""""""""
+
 " Rails向けのコマンドを提供する
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 " Ruby向けにendを自動挿入してくれる
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 " コメントON/OFFを手軽に実行
 Plug 'tomtom/tcomment_vim'
+
 " シングルクオートとダブルクオートの入れ替え等
 Plug 'tpope/vim-surround'
 " vim-surround含む特定のプラグインの機能をリピート可能にする
 Plug 'tpope/vim-repeat'
+""""""""""""""""""""""""""""""
+" vim-repeat設定
+""""""""""""""""""""""""""""""
+" https://github.com/tpope/vim-repeat#repeatvim
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+""""""""""""""""""""""""""""""
+
 " インデントに色を付けて見やすくする
 Plug 'nathanaelkane/vim-indent-guides'
+""""""""""""""""""""""""""""""
+" vim-indent-guides設定
+""""""""""""""""""""""""""""""
+" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup = 1
+""""""""""""""""""""""""""""""
+
 " ログファイルを色づけしてくれる
 Plug 'vim-scripts/AnsiEsc.vim'
 " 行末の半角スペースを可視化
@@ -50,14 +76,26 @@ Plug 'junegunn/fzf.vim'
 
 " emmet
 Plug 'mattn/emmet-vim'
+""""""""""""""""""""""""""""""
+" emmet設定
+""""""""""""""""""""""""""""""
 " https://github.com/mattn/emmet-vim#enable-just-for-htmlcss
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+""""""""""""""""""""""""""""""
 
 " color scheme
 Plug 'morhetz/gruvbox'
 " シンタックスチェック
 Plug 'w0rp/ale'
+""""""""""""""""""""""""""""""
+" ale設定
+""""""""""""""""""""""""""""""
+" https://github.com/w0rp/ale#5ix-how-can-i-navigate-between-errors-quickly
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+""""""""""""""""""""""""""""""
+
 " 自動補完
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -66,6 +104,13 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+""""""""""""""""""""""""""""""
+" deoplete設定
+""""""""""""""""""""""""""""""
+" https://github.com/Shougo/deoplete.nvim#install
+let g:deoplete#enable_at_startup = 1
+""""""""""""""""""""""""""""""
+
 " Gitを便利に使う
 Plug 'tpope/vim-fugitive'
 " ファイルの変更状況を表示
@@ -73,6 +118,13 @@ Plug 'airblade/vim-gitgutter'
 " ステータスラインを格好よくする
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+""""""""""""""""""""""""""""""
+" airline設定
+""""""""""""""""""""""""""""""
+" ステータスバーのカラースキーマ
+let g:airline_theme='powerlineish'
+""""""""""""""""""""""""""""""
+
 " 日本語ヘルプ
 Plug 'vim-jp/vimdoc-ja'
 
@@ -180,24 +232,6 @@ augroup END
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
-" NERDTreeToggle設定
-""""""""""""""""""""""""""""""
-" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
-noremap <C-n> :NERDTreeToggle<CR>
-" ツリービュー以外にウインドウがなければvimを終了する
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeShowHidden=1
-""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""
-" ale設定
-""""""""""""""""""""""""""""""
-" https://github.com/w0rp/ale#5ix-how-can-i-navigate-between-errors-quickly
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""
 " その他設定
 """"""""""""""""""""""""""""""
 " 構文毎に文字色を変化させる
@@ -211,9 +245,6 @@ silent! colorscheme gruvbox
 " jキーを２回連続で入力するとインサートモードからエスケープできるようバインド
 inoremap <silent> jj <ESC>
 
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup = 1
-
 " grep検索の実行後にQuickFix Listを表示する
 augroup ShowList
   autocmd!
@@ -226,20 +257,9 @@ highlight LineNr ctermfg=darkyellow
 " 対応する要素へ'%'で移動
 packadd! matchit
 
-" ステータスバーのカラースキーマ
-let g:airline_theme='powerlineish'
-
 " 検索結果ハイライトをESCキーの連打でリセットする
 " vimテクニックバイブル4-16
 nnoremap <ESC><ESC> :nohlsearch<CR>
-
-" vim-repeat設定
-" https://github.com/tpope/vim-repeat#repeatvim
-silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
-
-" deoplete設定
-" https://github.com/Shougo/deoplete.nvim#install
-let g:deoplete#enable_at_startup = 1
 """"""""""""""""""""""""""""""
 
 " filetype関連を有効にする
