@@ -33,6 +33,8 @@ Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'tomtom/tcomment_vim'
 " シングルクオートとダブルクオートの入れ替え等
 Plug 'tpope/vim-surround'
+" vim-surround含む特定のプラグインの機能をリピート可能にする
+Plug 'tpope/vim-repeat'
 " インデントに色を付けて見やすくする
 Plug 'nathanaelkane/vim-indent-guides'
 " ログファイルを色づけしてくれる
@@ -223,6 +225,10 @@ let g:airline_theme='powerlineish'
 " 検索結果ハイライトをESCキーの連打でリセットする
 " vimテクニックバイブル4-16
 nnoremap <ESC><ESC> :nohlsearch<CR>
+
+" vim-repeat設定
+" https://github.com/tpope/vim-repeat#repeatvim
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 " deoplete設定
 " https://github.com/Shougo/deoplete.nvim#install
