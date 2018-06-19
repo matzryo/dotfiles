@@ -255,7 +255,11 @@ augroup END
 highlight LineNr ctermfg=darkyellow
 
 " 対応する要素へ'%'で移動
-packadd! matchit
+if has('nvim')
+  runtime! macros/matchit.vim
+else
+  packadd! matchit
+endif
 
 " 検索結果ハイライトをESCキーの連打でリセットする
 " vimテクニックバイブル4-16
