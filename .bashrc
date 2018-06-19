@@ -19,6 +19,14 @@ EDITOR=/usr/bin/nano
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init - bash)"
 
+# Git管理しない設定(PC固有の設定など)をここに書く
+if [ -d "${HOME}/.bash.d" ] ; then
+    for f in "${HOME}"/.bash.d/*.sh ; do
+        source "$f"
+    done
+    unset f
+fi
+
 # あればfishを起動
 if fish_loc="$(type -p "fish")" && [ -x "$fish_loc" ]; then
   exec $fish_loc

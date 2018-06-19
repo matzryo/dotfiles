@@ -48,3 +48,11 @@ git clone git@github.com:matzryo/dotfiles.git
 cd dotfiles
 bash setup.sh
 ```
+
+## マシン固有のシェル設定
+
+Git管理しないシェル設定(PC固有の設定など)は、以下に記述して下さい。
+
+```shell
+$HOME/.bash.d/*.sh
+```
