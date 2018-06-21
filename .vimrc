@@ -1,5 +1,11 @@
 scriptencoding utf-8
 
+if !has('nvim')
+  " モダンなデフォルト設定を読み込む
+  unlet! skip_defaults_vim
+  source $VIMRUNTIME/defaults.vim
+endif
+
 " 一旦ファイルタイプ関連を無効化する
 " http://d.hatena.ne.jp/wiredool/20120618/1340019962
 filetype off
@@ -222,13 +228,16 @@ endif
 """"""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
 """"""""""""""""""""""""""""""
-augroup RestoreCursorPosition
-  autocmd!
-  autocmd BufReadPost *
-  \ if line("'\"") > 1 && line ("'\"") <= line("$") |
-  \   exe "normal! g'\"" |
-  \ endif
-augroup END
+" vimならば上でdefaults.vimを読み込んでいるので不要
+if has("nvim")
+  augroup RestoreCursorPosition
+    autocmd!
+    autocmd BufReadPost *
+    \ if line("'\"") > 1 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+  augroup END
+endif
 """"""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
