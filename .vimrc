@@ -28,7 +28,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " ファイルオープンを便利に
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " ファイルをtree表示してくれる | NERDTree上でgitステータスを表示
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
