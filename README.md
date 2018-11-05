@@ -2,6 +2,10 @@
 
 ## requirements
 
+### fish shell
+
+<https://fishshell.com/>
+
 ### anyenv
 
 <https://github.com/riywo/anyenv>
