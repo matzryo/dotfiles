@@ -14,7 +14,7 @@ do
   source_file=$HOME/dotfiles/$file
   target_file=$HOME/$file
 
-  mkdir -p $(dirname $target_file) && touch $(basename $target_file)
+  mkdir -p $(dirname $target_file) && touch $target_file
   ln -si $source_file $target_file
 done
 
