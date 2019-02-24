@@ -1,6 +1,13 @@
 #!/bin/bash
 
-readonly DOTFILES=(.bashrc .bash_profile .vimrc .tmux.conf .config/fish/config.fish .config/nvim/init.vim)
+readonly DOTFILES=(
+  .bashrc .bash_profile
+  .vimrc
+  .tmux.conf
+  .config/fish/config.fish
+  .config/nvim/init.vim
+  .config/i3/config
+)
 
 for file in "${DOTFILES[@]}"
 do
