@@ -150,6 +150,9 @@ let g:airline_theme='powerlineish'
 " 日本語ヘルプ
 Plug 'vim-jp/vimdoc-ja'
 
+" バッファを素早く実行する
+Plug 'thinca/vim-quickrun'
+
 call plug#end()
 
 " 未インストールのプラグインがあれば、自動でインストールする
