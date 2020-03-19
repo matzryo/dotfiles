@@ -1,12 +1,14 @@
 #!/bin/bash
 
 readonly DOTFILES=(
-  .bashrc .bash_profile
-  .vimrc
-  .tmux.conf
+  .bashrc
+  .bash_profile
+  .config/i3/config
   .config/fish/config.fish
   .config/nvim/init.vim
-  .config/i3/config
+  .editorconfig
+  .tmux.conf
+  .vimrc
 )
 
 for file in "${DOTFILES[@]}"
