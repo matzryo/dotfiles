@@ -7,11 +7,7 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-# >>> BEGIN ADDED BY CNCHI INSTALLER
-BROWSER=/usr/bin/chromium
-EDITOR=/usr/bin/nano
-# <<< END ADDED BY CNCHI INSTALLER
-
+export EDITOR=/usr/bin/vim
 export PATH="$HOME/.local/bin:$PATH"
 
 # Git管理しない設定(PC固有の設定など)をここに書く
