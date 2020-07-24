@@ -1,6 +1,7 @@
 #!/bin/bash
 
 readonly DOTFILES=(
+  .asdfrc
   .bashrc
   .bash_profile
   .config/i3/config

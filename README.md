@@ -6,9 +6,9 @@
 
 <https://fishshell.com/>
 
-### anyenv
+### asdf
 
-<https://github.com/riywo/anyenv>
+<https://github.com/asdf-vm/asdf>
 
 ### The Silver Searcher
 

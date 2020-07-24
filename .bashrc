@@ -12,12 +12,7 @@ BROWSER=/usr/bin/chromium
 EDITOR=/usr/bin/nano
 # <<< END ADDED BY CNCHI INSTALLER
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# anyenv環境変数設定
-# bash_profileに書くと、tmux起動時、うまくfishに渡されない
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init - bash)"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Git管理しない設定(PC固有の設定など)をここに書く
 if [ -d "${HOME}/.bash.d" ] ; then
@@ -26,6 +21,10 @@ if [ -d "${HOME}/.bash.d" ] ; then
     done
     unset f
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
 # あればfishを起動
 if fish_loc="$(type -p "fish")" && [ -x "$fish_loc" ]; then
