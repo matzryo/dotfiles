@@ -39,11 +39,6 @@ python3 および neovimパッケージなど。
 <http://www.kfish.org/software/xsel/>
 
 ### macOS
-
-#### reattach-to-user-namespace
-
-<https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard>
-
 ## install
 
 ```shell
