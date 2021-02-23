@@ -20,7 +20,8 @@ export PATH="${HOME}/.local/bin:${PATH}"
 # 複雑化した場合ファイルを分割したい
 case "$(uname -s)" in
   Darwin*)
-    export PATH="$(brew --prefix)/bin:${PATH}"
+    # macOS ARM前提のパス
+    export PATH="/opt/homebrew/bin:${PATH}"
     source $(brew --prefix asdf)/asdf.sh
     source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
     ;;
