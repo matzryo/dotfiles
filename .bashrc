@@ -12,7 +12,7 @@ PS1='[\u@\h \W]\$ '
 export VISUAL=vim
 # ラインエディタ
 export EDITOR="${VISUAL}"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="${HOME}/.local/bin:${PATH}"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -21,25 +21,25 @@ export PATH="$HOME/.local/bin:$PATH"
 case "$(uname -s)" in
   Darwin*)
     export PATH="/opt/homebrew/bin:${PATH}"
-    . $(brew --prefix asdf)/asdf.sh
-    . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+    source $(brew --prefix asdf)/asdf.sh
+    source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
     ;;
 
   Linux*)
-    . "${HOME}"/.asdf/asdf.sh
-    . "${HOME}"/.asdf/completions/asdf.bash
+    source "${HOME}"/.asdf/asdf.sh
+    source "${HOME}"/.asdf/completions/asdf.bash
     ;;
 esac
 
 # Git管理しない設定(PC固有の設定など)をここに書く
 if [ -d "${HOME}/.bash.d" ] ; then
-    for f in "${HOME}"/.bash.d/*.sh ; do
-        source "$f"
+    for FILE in "${HOME}"/.bash.d/*.sh ; do
+        source "${FILE}"
     done
-    unset f
+    unset FILE
 fi
 
 # あればfishを起動
-if fish_loc="$(type -p "fish")" && [ -x "$fish_loc" ]; then
-  exec $fish_loc
+if FISH_LOC="$(type -p "fish")" && [ -x "${FISH_LOC}" ]; then
+  exec "${FISH_LOC}"
 fi
