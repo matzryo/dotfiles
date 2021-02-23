@@ -8,7 +8,10 @@
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
-export EDITOR=/usr/bin/vim
+# スクリーンエディタ
+export VISUAL=vim
+# ラインエディタ
+export EDITOR="${VISUAL}"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Git管理しない設定(PC固有の設定など)をここに書く
