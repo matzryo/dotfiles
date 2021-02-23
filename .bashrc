@@ -3,6 +3,7 @@
 #
 
 # If not running interactively, don't do anything
+# sshでコマンド実行すると.bashrcが読まれるが、対話シェルではないのでここで終了する
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
