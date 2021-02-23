@@ -39,6 +39,12 @@ python3 および neovimパッケージなど。
 <http://www.kfish.org/software/xsel/>
 
 ### macOS
+
+#### Homebrew
+
+<https://brew.sh/>
+
+
 ## install
 
 ```shell
