@@ -10,6 +10,7 @@ readonly DOTFILES=(
   .editorconfig
   .tmux.conf
   .vimrc
+  .zshrc
 )
 
 for file in "${DOTFILES[@]}"
