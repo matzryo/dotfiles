@@ -44,7 +44,11 @@ fi
 
 # あればfishを起動
 if FISH_LOC="$(type -p "fish")" && [ -x "${FISH_LOC}" ]; then
-  exec "${FISH_LOC}"
+  # RubyMineでasdfが読み込まれない問題の対応
+  # https://youtrack.jetbrains.com/articles/IDEA-A-19/Shell-Environment-Loading
+  if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
+    exec "${FISH_LOC}"
+  fi
 fi
 
 # Fig post block. Keep at the bottom of this file.
