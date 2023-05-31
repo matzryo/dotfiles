@@ -24,7 +24,7 @@ case "$(uname -s)" in
   Darwin*)
     # macOS ARM前提のパス
     export PATH="/opt/homebrew/bin:${PATH}"
-    source "$(brew --prefix asdf)"/asdf.sh
+    source "$(brew --prefix asdf)"/libexec/asdf.sh
     source "$(brew --prefix asdf)"/etc/bash_completion.d/asdf.bash
     ;;
 
