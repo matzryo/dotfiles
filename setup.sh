@@ -7,6 +7,7 @@ readonly DOTFILES=(
   .config/i3/config
   .config/fish/config.fish
   .config/nvim/init.vim
+  .config/sheldon/sheldon.toml
   .editorconfig
   .tmux.conf
   .vimrc

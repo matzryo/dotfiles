@@ -2,19 +2,27 @@
 
 ## requirements
 
-### fish shell
-
-<https://fishshell.com/>
-
 ### asdf
 
 <https://github.com/asdf-vm/asdf>
+
+### sheldon
+
+zshのプラグインマネージャー。
+
+<https://github.com/rossmacarthur/sheldon>
 
 ### The Silver Searcher
 
 <https://github.com/ggreer/the_silver_searcher>
 
 fzf.vimのAgコマンドで必要
+
+### starship
+
+プロンプト設定ツール。
+
+<https://github.com/starship/starship>
 
 ### tmux
 
@@ -44,6 +52,19 @@ python3 および neovimパッケージなど。
 
 <https://brew.sh/>
 
+## recommendations
+
+### Fig(Mac only)
+
+シェルを諸々便利にするツール。自分はIDEスタイルの補完が目的で導入。
+
+<https://fig.io/>
+### z
+
+頻繁に使うディレクトリに素早く移動するためのツール。
+
+<https://github.com/rupa/z>
+
 ## install
 
 ```shell
@@ -59,4 +80,5 @@ Git管理しないシェル設定(PC固有の設定など)は、以下に記述�
 
 ```shell
 $HOME/.bash.d/*.sh
+$HOME/.zsh.d/*.zsh
 ```
