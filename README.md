@@ -8,21 +8,21 @@
 
 ### sheldon
 
-zshのプラグインマネージャー。
-
 <https://github.com/rossmacarthur/sheldon>
+
+zshのプラグインマネージャー。
 
 ### The Silver Searcher
 
 <https://github.com/ggreer/the_silver_searcher>
 
-fzf.vimのAgコマンドで必要
+fzf.vimのAgコマンドで必要。
 
 ### starship
 
-プロンプト設定ツール。
-
 <https://github.com/starship/starship>
+
+プロンプト設定ツール。
 
 ### tmux
 
@@ -56,14 +56,15 @@ python3 および neovimパッケージなど。
 
 ### Fig(Mac only)
 
+<https://fig.io/>
+
 シェルを諸々便利にするツール。自分はIDEスタイルの補完が目的で導入。
 
-<https://fig.io/>
 ### z
 
-頻繁に使うディレクトリに素早く移動するためのツール。
-
 <https://github.com/rupa/z>
+
+頻繁に使うディレクトリに素早く移動するためのツール。
 
 ## install
 
