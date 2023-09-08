@@ -32,13 +32,7 @@ fzf.vimのAgコマンドで必要。
 
 <http://www.vim.org/>
 
-[ale](https://github.com/w0rp/ale)および[deoplete.nvim](https://github.com/Shougo/deoplete.nvim)を使うため、バージョン8以上が必要
-
-#### deoplede.nvimの各種Requirements
-
-<https://github.com/Shougo/deoplete.nvim#requirements>
-
-python3 および neovimパッケージなど。
+[ale](https://github.com/w0rp/ale)を使うため、バージョン8以上が必要
 
 ### Linux
 

@@ -118,21 +118,6 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 """"""""""""""""""""""""""""""
 
-" 自動補完
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-""""""""""""""""""""""""""""""
-" deoplete設定
-""""""""""""""""""""""""""""""
-" https://github.com/Shougo/deoplete.nvim#install
-let g:deoplete#enable_at_startup = 1
-""""""""""""""""""""""""""""""
-
 " Gitを便利に使う
 Plug 'tpope/vim-fugitive'
 " ファイルの変更状況を表示
