@@ -138,6 +138,10 @@ Plug 'vim-jp/vimdoc-ja'
 " バッファを素早く実行する
 Plug 'thinca/vim-quickrun'
 
+" vimでGitHub Copolotを使う
+" プラグインインストール後、 :Copilot setupで設定
+Plug 'github/copilot.vim'
+
 call plug#end()
 
 " 未インストールのプラグインがあれば、自動でインストールする
