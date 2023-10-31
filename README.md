@@ -54,6 +54,17 @@ fzf.vimのAgコマンドで必要。
 
 シェルを諸々便利にするツール。自分はIDEスタイルの補完が目的で導入。
 
+### yabai, skhd
+
+<https://github.com/koekeishiya/yabai>
+
+Macで使える、タイル型ウィンドウマネージャー。
+
+<https://github.com/koekeishiya/skhd>
+
+Macで使える、ホットキーデーモン。
+yabaiと連携させる。
+
 ### z
 
 <https://github.com/rupa/z>

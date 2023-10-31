@@ -8,6 +8,8 @@ readonly DOTFILES=(
   .config/fish/config.fish
   .config/nvim/init.vim
   .config/sheldon/plugins.toml
+  .config/skhd/skhdrc
+  .config/yabai/yabairc
   .editorconfig
   .tmux.conf
   .vimrc
