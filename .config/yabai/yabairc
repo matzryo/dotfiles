@@ -12,32 +12,60 @@
 #
 
 # global settings
-yabai -m config                                 \
-    mouse_follows_focus          off            \
-    focus_follows_mouse          off            \
-    window_origin_display        default        \
-    window_placement             second_child   \
-    window_zoom_persist          on             \
-    window_shadow                on             \
-    window_animation_duration    0.0            \
-    window_animation_frame_rate  120            \
-    window_opacity_duration      0.0            \
-    active_window_opacity        1.0            \
-    normal_window_opacity        0.90           \
-    window_opacity               off            \
-    insert_feedback_color        0xffd75f5f     \
-    split_ratio                  0.50           \
-    split_type                   auto           \
-    auto_balance                 off            \
-    top_padding                  12             \
-    bottom_padding               12             \
-    left_padding                 12             \
-    right_padding                12             \
-    window_gap                   06             \
-    layout                       bsp            \
-    mouse_modifier               fn             \
-    mouse_action1                move           \
-    mouse_action2                resize         \
-    mouse_drop_action            swap
+# ウィンドウにフォーカスを合わせるときは、マウスをウィンドウの中心に置きます。
+yabai -m config mouse_follows_focus off
+# マウスがウィンドウ上に移動したときにフォーカスを移動させるかどうかを制御します。
+yabai -m config focus_follows_mouse off
+# ウィンドウの原点表示を制御します。
+yabai -m config window_origin_display default
+# 新しいウィンドウの配置を制御します。
+yabai -m config window_placement second_child
+# ウィンドウのズーム状態(親ウィンドウや全画面を占有している状態)が持続するかどうかを制御します。
+yabai -m config window_zoom_persist on
+# ウィンドウの影を制御します。
+yabai -m config window_shadow on
+# ウィンドウアニメーションの持続時間を制御します。
+yabai -m config window_animation_duration 0.0
+# ウィンドウアニメーションのフレームレートを制御します。
+yabai -m config window_animation_frame_rate 120
+# ウィンドウの不透明度変更の持続時間を制御します。
+yabai -m config window_opacity_duration 0.0
+# アクティブウィンドウの不透明度を制御します。
+yabai -m config active_window_opacity 1.0
+# 通常のウィンドウの不透明度を制御します。
+yabai -m config normal_window_opacity 0.90
+# ウィンドウの不透明度を制御します。
+yabai -m config window_opacity off
+# 挿入フィードバックの色を制御します。
+yabai -m config insert_feedback_color 0xffd75f5f
+# 分割比を制御します。
+yabai -m config split_ratio 0.50
+# 分割タイプを制御します。
+yabai -m config split_type auto
+# 自動バランスを制御します。
+yabai -m config auto_balance off
+# 上部のパディングを制御します。
+yabai -m config top_padding 16
+# 下部のパディングを制御します。
+yabai -m config bottom_padding 16
+# 左部のパディングを制御します。
+yabai -m config left_padding 16
+# 右部のパディングを制御します。
+yabai -m config right_padding 16
+# ウィンドウ間のギャップを制御します。
+yabai -m config window_gap 16
+# レイアウトタイプを制御します。
+yabai -m config layout bsp
+# マウス修飾子を制御します。
+yabai -m config mouse_modifier fn
+# マウスアクション1(fn + 左クリック)を制御します。
+yabai -m config mouse_action1 move
+# マウスアクション2(fn + 右クリック)を制御します。
+yabai -m config mouse_action2 resize
+# マウスドロップアクション(ウィンドウの中心に別ウィンドウをドロップ)を制御します。
+yabai -m config mouse_drop_action swap
+
+# システム設定アプリケーションをフロート(非タイルの通常表示)に設定します。
+yabai -m rule --add app="^システム設定$" manage=off
 
 echo "yabai configuration loaded.."
