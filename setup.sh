@@ -9,6 +9,7 @@ readonly DOTFILES=(
   .config/nvim/init.vim
   .config/sheldon/plugins.toml
   .config/skhd/skhdrc
+  .config/starship.toml
   .config/yabai/yabairc
   .editorconfig
   .tmux.conf
