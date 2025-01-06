@@ -41,6 +41,9 @@ else
     echo "Sheldon(zshのプラグインマネージャ)がインストールされていません。初期化をスキップします。高機能な自動補完やハイライトが効きません。インストールをおすすめします。"
 fi
 
+# 補完機能を有効にする
+autoload -Uz compinit && compinit
+
 # Git管理しない設定(PC固有の設定など)をここに書く
 load_custom_config "${HOME}/.zsh.d"
 
