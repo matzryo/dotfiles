@@ -48,12 +48,6 @@ fzf.vimのAgコマンドで必要。
 
 ## recommendations
 
-### Fig(Mac only)
-
-<https://fig.io/>
-
-シェルを諸々便利にするツール。自分はIDEスタイルの補完が目的で導入。
-
 ### yabai, skhd
 
 <https://github.com/koekeishiya/yabai>

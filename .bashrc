@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
 #
 # ~/.bashrc
 #
@@ -50,6 +48,3 @@ if FISH_LOC="$(type -p "fish")" && [ -x "${FISH_LOC}" ]; then
     exec "${FISH_LOC}"
   fi
 fi
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
