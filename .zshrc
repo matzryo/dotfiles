@@ -33,7 +33,10 @@ case "$(uname -s)" in
     ;;
 esac
 
-source "$(brew --prefix)/etc/profile.d/z.sh"
+# z.shをロードする（macOSのみ）
+if [[ "$(uname -s)" == "Darwin"* ]] && command -v brew >/dev/null 2>&1; then
+    [ -f "$(brew --prefix)/etc/profile.d/z.sh" ] && source "$(brew --prefix)/etc/profile.d/z.sh"
+fi
 
 if command -v sheldon >/dev/null 2>&1; then
     eval "$(sheldon source)"

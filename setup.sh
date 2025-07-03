@@ -19,12 +19,12 @@ readonly DOTFILES=(
 
 for file in "${DOTFILES[@]}"
 do
-  source_file=$HOME/dotfiles/$file
-  target_file=$HOME/$file
+  source_file="$(pwd)/$file"
+  target_file="$HOME/$file"
 
   # ディレクトリが無ければ作る
-  if [ ! -d "$(dirname $target_file)" ]; then
-    mkdir -p "$(dirname $target_file)"
+  if [ ! -d "$(dirname "$target_file")" ]; then
+    mkdir -p "$(dirname "$target_file")"
   fi
 
   ln -si "$source_file" "$target_file"
