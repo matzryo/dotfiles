@@ -25,7 +25,6 @@ case "$(uname -s)" in
     # macOS ARM前提のパス
     export PATH="/opt/homebrew/bin:${PATH}"
     source "$(brew --prefix asdf)"/libexec/asdf.sh
-    # z.shをロードする
     [ -f "$(brew --prefix)/etc/profile.d/z.sh" ] && source "$(brew --prefix)/etc/profile.d/z.sh"
     ;;
 
