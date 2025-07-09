@@ -25,6 +25,8 @@ case "$(uname -s)" in
     # macOS ARM前提のパス
     export PATH="/opt/homebrew/bin:${PATH}"
     source "$(brew --prefix asdf)"/libexec/asdf.sh
+    # z.shをロードする
+    [ -f "$(brew --prefix)/etc/profile.d/z.sh" ] && source "$(brew --prefix)/etc/profile.d/z.sh"
     ;;
 
   Linux*)
@@ -32,11 +34,6 @@ case "$(uname -s)" in
     source "${HOME}"/.asdf/asdf.sh
     ;;
 esac
-
-# z.shをロードする（macOSのみ）
-if [[ "$(uname -s)" == "Darwin"* ]] && command -v brew >/dev/null 2>&1; then
-    [ -f "$(brew --prefix)/etc/profile.d/z.sh" ] && source "$(brew --prefix)/etc/profile.d/z.sh"
-fi
 
 if command -v sheldon >/dev/null 2>&1; then
     eval "$(sheldon source)"
