@@ -15,6 +15,12 @@ export VISUAL=vim
 export EDITOR="${VISUAL}"
 export PATH="${HOME}/.local/bin:${PATH}"
 
+# XDG Base Directory
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_STATE_HOME="${HOME}/.local/state"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # OS別設定
