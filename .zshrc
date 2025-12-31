@@ -56,6 +56,42 @@ bindkey -e
 # Git管理しない設定(PC固有の設定など)をここに書く
 load_custom_config "${HOME}/.zsh.d"
 
+# git switch **[TAB] でブランチ名を補完する
+# @see https://github.com/junegunn/fzf/wiki/Examples-(completion)#zsh-complete-git-co-for-example
+_fzf_complete_git() {
+    ARGS="$@"
+    local branches
+    branches=$(git branch -vv --all)
+    if [[ $ARGS == 'git switch'* ]]; then
+        _fzf_complete --reverse --multi -- "$@" < <(
+            echo $branches
+        )
+    else
+        eval "zle ${fzf_default_completion:-expand-or-complete}"
+    fi
+}
+
+_fzf_complete_git_post() {
+    awk '{print $1}'
+}
+
+# fsw - branch/tagにswitchする。HEADとのコミット差分をプレビューしながら選べる。
+# @see https://github.com/junegunn/fzf/wiki/Examples#git
+fsw() {
+  local tags branches target
+  branches=$(
+    git --no-pager branch --all \
+      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+    | sed '/^$/d') || return
+  tags=$(
+    git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
+  target=$(
+    (echo "$branches"; echo "$tags") |
+    fzf --no-hscroll --no-multi -n 2 \
+        --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
+  git switch $(awk '{print $2}' <<<"$target" )
+}
+
 # 設定ファイルの末尾に書く
 # https://starship.rs/guide/#%F0%9F%9A%80-installation
 eval "$(starship init zsh)"
