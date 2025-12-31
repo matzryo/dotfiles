@@ -49,6 +49,10 @@ fi
 # 補完機能を有効にする
 autoload -Uz compinit && compinit
 
+# Emacsキーバインドを常に有効化
+# EDITOR=vimのため、未指定だとkeymapsがviinsになる
+bindkey -e
+
 # Git管理しない設定(PC固有の設定など)をここに書く
 load_custom_config "${HOME}/.zsh.d"
 
