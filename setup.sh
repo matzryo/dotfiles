@@ -1,11 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 readonly DOTFILES=(
   .asdfrc
-  .bashrc
-  .bash_profile
   .config/i3/config
-  .config/fish/config.fish
   .config/nvim/init.vim
   .config/sheldon/plugins.toml
   .config/skhd/skhdrc

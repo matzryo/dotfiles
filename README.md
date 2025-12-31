@@ -71,7 +71,7 @@ yabaiと連携させる。
 cd $HOME
 git clone git@github.com:matzryo/dotfiles.git
 cd dotfiles
-bash setup.sh
+zsh setup.sh
 ```
 
 ## マシン固有のシェル設定
@@ -79,6 +79,5 @@ bash setup.sh
 Git管理しないシェル設定(PC固有の設定など)は、以下に記述して下さい。
 
 ```shell
-$HOME/.bash.d/*.sh
 $HOME/.zsh.d/*.zsh
 ```
