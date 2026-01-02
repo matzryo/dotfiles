@@ -21,6 +21,8 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 
+eval "$(mise activate zsh)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # OS別設定
@@ -30,13 +32,11 @@ case "$(uname -s)" in
     alias ls='ls -G'
     # macOS ARM前提のパス
     export PATH="/opt/homebrew/bin:${PATH}"
-    source "$(brew --prefix asdf)"/libexec/asdf.sh
     [ -f "$(brew --prefix)/etc/profile.d/z.sh" ] && source "$(brew --prefix)/etc/profile.d/z.sh"
     ;;
 
   Linux*)
     alias ls='ls --color=auto'
-    source "${HOME}"/.asdf/asdf.sh
     ;;
 esac
 

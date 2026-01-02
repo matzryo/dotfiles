@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 readonly DOTFILES=(
-  .asdfrc
   .config/i3/config
   .config/nvim/init.vim
   .config/sheldon/plugins.toml

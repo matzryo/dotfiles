@@ -2,9 +2,9 @@
 
 ## requirements
 
-### asdf
+### mise
 
-<https://github.com/asdf-vm/asdf>
+<https://github.com/jdx/mise>
 
 ### sheldon
 
