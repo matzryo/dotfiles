@@ -40,6 +40,11 @@ case "$(uname -s)" in
     ;;
 esac
 
+# tmux自動起動（tmuxセッション内でなければ新規セッションを起動）
+if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
+    tmux new-session
+fi
+
 if command -v sheldon >/dev/null 2>&1; then
     eval "$(sheldon source)"
 else
