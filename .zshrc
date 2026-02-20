@@ -21,8 +21,6 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 
-eval "$(mise activate zsh)"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # OS別設定
@@ -50,6 +48,8 @@ if command -v sheldon >/dev/null 2>&1; then
 else
     echo "Sheldon(zshのプラグインマネージャ)がインストールされていません。初期化をスキップします。高機能な自動補完やハイライトが効きません。インストールをおすすめします。"
 fi
+
+eval "$(mise activate zsh)"
 
 # 補完機能を有効にする
 autoload -Uz compinit && compinit
