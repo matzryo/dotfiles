@@ -47,7 +47,7 @@ else
 endif
 
 " ファイルをtree表示してくれる | NERDTree上でgitステータスを表示
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 """"""""""""""""""""""""""""""
 " nerdtree設定
 """"""""""""""""""""""""""""""
