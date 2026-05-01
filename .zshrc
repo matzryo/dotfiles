@@ -97,6 +97,20 @@ fsw() {
   git switch $(awk '{print $2}' <<<"$target" )
 }
 
+# ghq + fzf: Ctrl-]でリポジトリ一覧から選択してcd
+# @see https://github.com/Songmu/ghq-handbook/blob/master/ja/05-command-list.md
+fzf-src() {
+    local repo=$(ghq list | fzf --query "$LBUFFER")
+    if [ -n "$repo" ]; then
+        repo=$(ghq list --full-path --exact $repo)
+        BUFFER="cd ${repo}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N fzf-src
+bindkey '^\]' fzf-src
+
 # 設定ファイルの末尾に書く
 # https://starship.rs/guide/#%F0%9F%9A%80-installation
 eval "$(starship init zsh)"
