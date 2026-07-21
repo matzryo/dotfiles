@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 readonly DOTFILES=(
+  .config/herdr/config.toml
   .config/i3/config
   .config/nvim/init.vim
   .config/sheldon/plugins.toml
@@ -8,7 +9,6 @@ readonly DOTFILES=(
   .config/starship.toml
   .config/yabai/yabairc
   .editorconfig
-  .tmux.conf
   .vimrc
   .zshrc
 )

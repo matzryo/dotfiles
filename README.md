@@ -24,9 +24,11 @@ fzf.vimのAgコマンドで必要。
 
 プロンプト設定ツール。
 
-### tmux
+### herdr
 
-<https://github.com/tmux/tmux>
+<https://github.com/ogulcancelik/herdr>
+
+AIエージェントマルチプレクサ。
 
 ### vim 8
 

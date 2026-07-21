@@ -38,9 +38,19 @@ case "$(uname -s)" in
     ;;
 esac
 
-# tmux自動起動（tmuxセッション内でなければ新規セッションを起動）
-if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
-    tmux new-session
+# herdr自動起動
+# 起動しない条件:
+#   - herdr未インストール
+#   - 非対話シェル（scp・エディタのサブプロセスなど）
+#   - stdinがTTYでない（CI・スクリプト経由など）
+#   - すでにherdrセッション内（無限ループ防止）
+#     herdrは全ペインのシェルに HERDR_ENV=1 を設定する（src/pane.rs）。
+#     herdr本体にもネスト起動を拒否するガードがあるため二重に安全。
+if command -v herdr >/dev/null 2>&1 \
+    && [[ -o interactive ]] \
+    && [[ -t 0 ]] \
+    && [[ "$HERDR_ENV" != "1" ]]; then
+    herdr
 fi
 
 if command -v sheldon >/dev/null 2>&1; then
