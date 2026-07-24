@@ -2,8 +2,6 @@
 
 readonly DOTFILES=(
   .config/herdr/config.toml
-  .config/i3/config
-  .config/nvim/init.vim
   .config/sheldon/plugins.toml
   .config/skhd/skhdrc
   .config/starship.toml
