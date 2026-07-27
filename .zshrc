@@ -21,7 +21,9 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzfのシェル統合。fzf --zsh で補完・キーバインドを読み込む
+# @see https://github.com/junegunn/fzf#setting-up-shell-integration
+command -v fzf >/dev/null 2>&1 && source <(fzf --zsh)
 
 # OS別設定
 # 複雑化した場合ファイルを分割したい
