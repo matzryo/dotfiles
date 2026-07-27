@@ -36,6 +36,12 @@ AIエージェントマルチプレクサ。
 
 [ale](https://github.com/w0rp/ale)を使うため、バージョン8以上が必要
 
+### Neovim
+
+<https://neovim.io/>
+
+`.config/nvim`（LazyVim構成）で使用します。
+
 ### Linux
 
 #### xsel
@@ -75,6 +81,11 @@ git clone git@github.com:matzryo/dotfiles.git
 cd dotfiles
 zsh setup.sh
 ```
+
+## .config/nvim について
+
+LazyVim/starter (<https://github.com/LazyVim/starter>, Apache License 2.0) をベースに改変しています。
+LICENSE は `.config/nvim/LICENSE` に保持しています。
 
 ## マシン固有のシェル設定
 
